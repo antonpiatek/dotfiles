@@ -114,3 +114,8 @@ onoremap <F9> <C-C>za
 vnoremap <F9> zf
 
 au BufRead,BufNewFile *.md set filetype=markdown
+
+" No save backup by .swp, causes oddness in watching for file changes
+set nowb
+set noswapfile
+set noar
