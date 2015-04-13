@@ -2,7 +2,7 @@
 	email = anton@piatek.co.uk
 	name = Anton Piatek
 [diff]
-	tool = vimdiff
+	tool = gvimdiff
 [difftool]
 	prompt = false
 [alias]

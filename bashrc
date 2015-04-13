@@ -104,13 +104,6 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
-export PATH=~/bin/:/Development/ode/5.0:/usr/local/bin:$PATH
-
-
-# Debian packaging options
-export DEBEMAIL=anton.piatek@uk.ibm.com
-export QUILT_PATCHES=debian/patches
-export QUILT_REFRESH_ARGS="-p ab --no-timestamps --no-index"
 
 #fixes for synergy keycodes
 echo "keycode 52 = z Z less less less less" | xmodmap -
@@ -118,76 +111,16 @@ echo "keycode 53 = x X greater greater greater greater" | xmodmap -
 
 alias x11vnc="x11vnc -usepw"
 
-
-#Load MQ env
-#. /opt/mqm/bin/setmqenv -p /opt/mqm
-# NOOOOOO - might be what is causing a broken $PATH and causing random things to exit the shell
-
-function devtest
-{
-  if [[ -e /devtest/broker_bash_profile ]];
-  then
-    echo Loading bash profile from devtest
-    . /devtest/broker_bash_profile
-  fi
-}
-
-function sbb
-{
-        setBrokerBuild $*
-        export PERL5LIB=~/workspaces/jazz/com.ibm.broker.test:~/workspaces/jazz/com.ibm.broker.test.cs:$PERL5LIB
-        echo PERL5LIB=$PERL5LIB
-        export MQTROOTPATH=~/workspaces/jazz/com.ibm.broker.test
-        echo MQTROOTPATH=$MQTROOTPATH
-        gsa_logger apiatek ~/.gsa tail -f /dev/null&
-        cd ~/bath/
-
-}
-function mantest
-{
-        #Manufacturing 
-        MAN=~/workspaces/industry/Manufacturing/workspace
-        export PERL5LIB=$MAN/AutomationTestMaterial/:$PERL5LIB
-        echo PERL5LIB=$PERL5LIB
-        export MQTROOTPATH=$MAN/AutomationTestMaterial:$MQTROOTPATH
-        echo MQTROOTPATH=$MQTROOTPATH
-}
-
-
-export JAVA_HOME=/usr/lib/j2sdk1.7-ibm/
-
-#ODE classpath options - only if we appear to be in an ODE session
-if [[ -n $SANDBOXDIR ]]; then
-  source /Development/devprofile
-  echo "ODE Sandbox detected - Setting ODE build variables"
-  export CLASSPATH=$SANDBOXDIR/export/classes/:$CLASSPATH
-  export BTYPE=D
-  alias mk="mk -j3"
-  echo "Commands you may want:"
-  echo ". /Development/current_back/src/setreloc.sh /broker_registries/anton /Development/rrr/ /Development/current_back"
-  echo "mk -j10 OPT_LEVEL="-g -O0" BTYPE=D && mk install_all"
-fi;
-
-# general ODE specific settings
-alias workon="workon -m amd64_linux_2"
-
-# JDBC settings for broker JDBC scripts
-#MQTEST_JDBC_JAR_DIR=/home/anton/JDBCRepository
-#MQTEST_JDBCINI=/home/anton/JDBCRepository/JDBCConfig.xml
-export MQTEST_JDBC_JAR_DIR=/broker/nonship/jdbc/
-export MQTEST_JDBCINI=/auto/jdbc.broker.ini
-
 #plugins for clipboard and remote sound
 alias rd='/usr/bin/xfreerdp --plugin cliprdr --plugin rdpsnd -g 1280x800 -u argotst'
 
 alias sl="sl -e"
 alias o="xdg-open"
 
-
-
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-#export gradle path
-#TODO move to work-specific bashrc file
-export PATH=~/gradle-1.12/bin:$PATH
+## Other bash profile goodness
+if [[ -e .bashrc_thinkpad ]]; then
+  . .bashrc_thinkpad
+fi
