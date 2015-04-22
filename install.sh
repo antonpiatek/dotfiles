@@ -16,6 +16,7 @@ git clone git://github.com/altercation/vim-colors-solarized.git ~/.vim/bundle/vi
 git clone https://github.com/kchmck/vim-coffee-script.git       ~/.vim/bundle/vim-coffee-script
 git clone git://github.com/digitaltoad/vim-jade.git             ~/.vim/bundle/vim-jade
 git clone https://github.com/plasticboy/vim-markdown.git        ~/.vim/bundle/vim-markdown
+git clone https://github.com/will133/vim-dirdiff.git            ~/.vim/bundle/vim-dirdiff
 mkdir -p ~/.vim/plugin
 ln -s $PWD/dotfiles/vim_tagbar ~/.vim/plugin/tagbar.vim
 mkdir -p ~/.vim/autoload
