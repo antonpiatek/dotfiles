@@ -24,3 +24,6 @@ ln -s $PWD/vim_pathogen        ~/.vim/autoload/pathogen.vim
 ln -s $PWD/vim_tagbar_autoload ~/.vim/autoload/tagbar.vim
 ln -s $PWD/vim_tagbar_syntax   ~/.vim/syntax/tagbar.vim 
 
+# liquidprompt - best bash/zsh PS1 I've seen!
+git clone https://github.com/nojhan/liquidprompt.git ~/liquidprompt
+

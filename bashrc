@@ -120,7 +120,12 @@ alias o="xdg-open"
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
+# Only load Liquid Prompt in interactive shells, not from a script or from scp
+[[ $- = *i* ]] && source ~/liquidprompt/liquidprompt
+
 ## Other bash profile goodness
 if [[ -e .bashrc_thinkpad ]]; then
   . .bashrc_thinkpad
 fi
+
+
