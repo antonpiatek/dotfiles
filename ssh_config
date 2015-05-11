@@ -20,14 +20,6 @@ ForwardX11Trusted yes
 ForwardAgent yes
 Compression yes
 
-Host smeg
-User anton
-HostName smeg.hursley.ibm.com
-ForwardAgent yes
-ForwardX11 yes
-ForwardX11Trusted yes
-Compression yes
-
 Host lost
 User anton
 HostName lost.hursley.ibm.com

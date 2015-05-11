@@ -14,6 +14,9 @@ set expandtab
 set softtabstop=2
 " set << and >> to move 2 spaces
 set shiftwidth=2 
+set shiftround "indent/outdent to nearest tabstop
+
+set matchpairs+=<:> " allow % to bounce between anglest oo
 
 set scrolloff=3
 
@@ -44,7 +47,10 @@ set ignorecase " set ignorecsae, except for below:
 set smartcase  " case-sensitive if search contains an uppercase character
 "set autoindent
 
+set backspace=indent,eol,start " make backspaces delete sensibly
+
 "http://www.vim.org/tips/tip.php?tip_id=369
+let b:comment_leader = '# '
 au FileType haskell,vhdl,ada            let b:comment_leader = '-- '
 au FileType vim                         let b:comment_leader = '" '
 au FileType c,cpp,java                  let b:comment_leader = '// '
