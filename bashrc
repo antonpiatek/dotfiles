@@ -7,10 +7,6 @@ fi
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-#alias to get the dbus session
-shopt -s expand_aliases
-alias getdbus="export DBUS_SESSION_BUS_ADDRESS=`cat /proc/$(pidof kded4)/environ | tr '\0' '\n' | grep DBUS | cut -d '=' -f2-`"
-
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
