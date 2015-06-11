@@ -120,8 +120,8 @@ export PATH="/usr/local/heroku/bin:$PATH"
 [[ $- = *i* ]] && source ~/liquidprompt/liquidprompt
 
 ## Other bash profile goodness
-if [[ -e .bashrc_thinkpad ]]; then
-  . .bashrc_thinkpad
+if [[ -e .bashrc_local ]]; then
+  . .bashrc_local
 fi
 
 

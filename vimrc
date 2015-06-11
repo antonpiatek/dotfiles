@@ -5,7 +5,7 @@ set nomousehide
 
 set showmatch                   
 "set how many spaces a tab char is
-set tabstop=8
+set tabstop=4
 
 "Tell vi not to replace spaces with tabs
 set expandtab
