@@ -106,7 +106,7 @@ set wrap linebreak nolist textwidth=0 wrapmargin=0
 let g:vim_markdown_folding_disabled=1
 "
 
-" Set autofoldeing with allowed manual (http://vim.wikia.com/wiki/Folding)
+" Set autofolding with allowed manual (http://vim.wikia.com/wiki/Folding)
 augroup vimrc
   au BufReadPre * setlocal foldmethod=indent
   au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
