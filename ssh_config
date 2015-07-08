@@ -45,27 +45,24 @@ Compression yes
 
 # Work private VMs
 #65
-Host co-build 
-  HostName 192.168.56.102
+Host 192.168.56.*
   StrictHostKeyChecking no
-  #UserKnownHostsFile=/dev/null
+  User root
+
+#Host co-sim
+#  HostName 192.168.56.3
+#  StrictHostKeyChecking no
+#  User root
+
+Host co-build
+  Host co-build
+  StrictHostKeyChecking no
   User apiatek
 
-Host co-sim
-  HostName 192.168.56.103
+Host co-build2
   StrictHostKeyChecking no
-  #UserKnownHostsFile=/dev/null
-  User root
-Host co-con 
-  HostName 192.168.56.104
-  StrictHostKeyChecking no
-  #UserKnownHostsFile=/dev/null
-  User root
-Host co-api
-  HostName 192.168.56.105
-  StrictHostKeyChecking no
-  #UserKnownHostsFile=/dev/null
-  User root
+  User apiatek
+
 
 
 
