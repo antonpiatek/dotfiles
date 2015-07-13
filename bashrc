@@ -116,12 +116,15 @@ alias o="xdg-open"
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
+export EDITOR=vim
+export VISUAL=gvim
+
 # Only load Liquid Prompt in interactive shells, not from a script or from scp
 [[ $- = *i* ]] && source ~/liquidprompt/liquidprompt
 
 ## Other bash profile goodness
-if [[ -e .bashrc_local ]]; then
-  . .bashrc_local
+if [[ -e ~/.bashrc_local ]]; then
+  . ~/.bashrc_local
 fi
 
 
