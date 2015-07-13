@@ -67,6 +67,11 @@ Host co-api
   #UserKnownHostsFile=/dev/null
   User root
 
+# Work
+Host work
+  HostName 192.168.4.197
+  User apiatek
+
 
 
 # SoMakeIt configs
