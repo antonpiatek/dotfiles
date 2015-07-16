@@ -127,4 +127,7 @@ if [[ -e ~/.bashrc_local ]]; then
   . ~/.bashrc_local
 fi
 
+highlight() { 
+  grep --color -E "$1|\$" 
+}
 
