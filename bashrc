@@ -117,7 +117,7 @@ alias o="xdg-open"
 export PATH="/usr/local/heroku/bin:$PATH"
 
 export EDITOR=vim
-export VISUAL=gvim
+export VISUAL="gvim -f"
 
 # Only load Liquid Prompt in interactive shells, not from a script or from scp
 [[ $- = *i* ]] && source ~/liquidprompt/liquidprompt
