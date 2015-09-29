@@ -69,6 +69,11 @@ Host build.latens.lan
 Host 192.168.8.130
   HostName 192.168.8.130
   User root
+ 
+# Work
+Host work
+  HostName 192.168.4.197
+  User apiatek
 
 
 # SoMakeIt configs
