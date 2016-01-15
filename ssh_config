@@ -41,44 +41,6 @@ User anton
 ForwardX11 yes
 ForwardX11Trusted yes
 Compression yes
-
-
-# Work private VMs
-Host 192.168.56.*
-  StrictHostKeyChecking no
-  User apiatek
-Host 192.168.*
-  StrictHostKeyChecking no
-  User root
-
-#Host co-sim
-#  HostName 192.168.56.3
-#  StrictHostKeyChecking no
-#  User root
-
-Host co-build
-  Host co-build
-  StrictHostKeyChecking no
-  User apiatek
-
-Host co-build2
-  StrictHostKeyChecking no
-  User apiatek
-
-Host build.latens.lan
-  HostName 192.168.9.67
-
-Host jupiter
-  HostName 136.170.160.103
-  User root
-
-Host 192.168.8.130
-  HostName 192.168.8.130
-  User root
-
-Host 192.168.9.22
-  HostName 192.168.9.22
-  User root
  
 # Work
 Host work
