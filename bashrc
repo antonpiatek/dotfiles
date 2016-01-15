@@ -15,6 +15,7 @@ export HISTCONTROL=ignoredups
 
 #Keep a large shell history
 export HISTFILESIZE=1000000
+export HISTSIZE=100000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -102,8 +103,8 @@ fi
 
 
 #fixes for synergy keycodes
-echo "keycode 52 = z Z less less less less" | xmodmap -
-echo "keycode 53 = x X greater greater greater greater" | xmodmap -
+#echo "keycode 52 = z Z less less less less" | xmodmap -
+#echo "keycode 53 = x X greater greater greater greater" | xmodmap -
 
 alias x11vnc="x11vnc -usepw"
 
@@ -113,11 +114,10 @@ alias rd='/usr/bin/xfreerdp --plugin cliprdr --plugin rdpsnd -g 1280x800 -u argo
 alias sl="sl -e"
 alias o="xdg-open"
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
 export EDITOR=vim
 export VISUAL="gvim -f"
+
+export PATH=~/bin:$PATH
 
 # Only load Liquid Prompt in interactive shells, not from a script or from scp
 [[ $- = *i* ]] && source ~/liquidprompt/liquidprompt

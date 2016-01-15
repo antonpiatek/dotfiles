@@ -111,6 +111,7 @@ augroup vimrc
   au BufReadPre * setlocal foldmethod=indent
   au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
 augroup END
+set foldlevelstart=20
 
 
 " Set F9 to open/collapse folds
@@ -125,3 +126,24 @@ au BufRead,BufNewFile *.md set filetype=markdown
 set nowb
 set noswapfile
 set noar
+
+" ctrlp
+" https://github.com/kien/ctrlp.vim
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+:helptags ~/.vim/bundle/ctrlp.vim/doc
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.o,*.P
+
+" vim -b : edit binary using xxd-format!
+augroup Binary
+  au!
+  au BufReadPre  *.pkt let &bin=1
+  au BufReadPost *.pkt if &bin | %!xxd
+  au BufReadPost *.pkt set ft=xxd | endif
+  au BufWritePre *.pkt if &bin | %!xxd -r
+  au BufWritePre *.pkt endif
+  au BufWritePost *.pkt if &bin | %!xxd
+  au BufWritePost *.pkt set nomod | endif
+augroup END

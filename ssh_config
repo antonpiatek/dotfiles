@@ -44,8 +44,10 @@ Compression yes
 
 
 # Work private VMs
-#65
 Host 192.168.56.*
+  StrictHostKeyChecking no
+  User apiatek
+Host 192.168.*
   StrictHostKeyChecking no
   User root
 
@@ -66,8 +68,16 @@ Host co-build2
 Host build.latens.lan
   HostName 192.168.9.67
 
+Host jupiter
+  HostName 136.170.160.103
+  User root
+
 Host 192.168.8.130
   HostName 192.168.8.130
+  User root
+
+Host 192.168.9.22
+  HostName 192.168.9.22
   User root
  
 # Work
@@ -112,3 +122,4 @@ Compression yes
 Host *
 ServerAliveInterval 180
 Compression yes
+UseRoaming no
