@@ -80,6 +80,8 @@ if [ "$TERM" != "dumb" ]; then
     alias dir='ls --color=auto --format=vertical'
     alias vdir='ls --color=auto --format=long'
 
+    # for some reason new ubuntu and byobu just give a no-color term - I always have colour...
+    export TERM=screen-256color
 fi
 
 # some more ls aliases
