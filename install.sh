@@ -41,6 +41,8 @@ gitClone https://github.com/kchmck/vim-coffee-script.git       ~/.vim/bundle/vim
 gitClone git://github.com/digitaltoad/vim-jade.git             ~/.vim/bundle/vim-jade
 gitClone https://github.com/plasticboy/vim-markdown.git        ~/.vim/bundle/vim-markdown
 gitClone https://github.com/will133/vim-dirdiff.git            ~/.vim/bundle/vim-dirdiff
+gitClone https://github.com/majutsushi/tagbar.git              ~/.vim/bundle/tagbar
+gitClone https://github.com/kien/ctrlp.vim.git                 ~/.vim/bundle/ctrlp.vim
 mkdir -p ~/.vim/plugin
 setLink "$PWD/dotfiles/vim_tagbar" ~/.vim/plugin/tagbar.vim
 mkdir -p ~/.vim/autoload

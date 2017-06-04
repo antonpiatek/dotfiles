@@ -41,133 +41,14 @@ User anton
 ForwardX11 yes
 ForwardX11Trusted yes
 Compression yes
-
-# OCDC configs
-Host olymp
-HostName olymp.hursley.ibm.com
-User anton
-Compression yes
-
-Host ocdc
-HostName ocdc.hursley.ibm.com
-User anton
-Compression yes
-
-Host spiky
-HostName spiky.hursley.ibm.com
-User anton
-Compression yes
-
-Host dementia
-HostName dementia.hursley.ibm.com
-user anton
-Compression yes
-
-Host spiky
-HostName spiky.hursley.ibm.com
-user anton
-Compression yes
-
-Host ocdc-pbuild
-HostName ocdc-pbuild.hursley.ibm.com
-user anton
-Compression yes
-
-Host sackboi
-HostName sackboi.hursley.ibm.com
-user anton
-Compression yes
-
-# Work configs
-Host q1bel11
-HostName q1bel11.belfast-sciencepark.uk.ibm.com
-StrictHostKeyChecking no
-UserKnownHostsFile=/dev/null
-user root
-
-Host q1bel12
-HostName q1bel12.belfast-sciencepark.uk.ibm.com
-StrictHostKeyChecking no
-UserKnownHostsFile=/dev/null
-user root
-
-Host q1bel15
-HostName q1bel15.belfast-sciencepark.uk.ibm.com
-StrictHostKeyChecking no
-UserKnownHostsFile=/dev/null
-user root
-Compression yes
-
-Host q1bel16
-HostName q1bel16.belfast-sciencepark.uk.ibm.com
-StrictHostKeyChecking no
-UserKnownHostsFile=/dev/null
-user root
-Compression yes
-
-Host q1bel18
-HostName q1bel18.belfast-sciencepark.uk.ibm.com
-StrictHostKeyChecking no
-UserKnownHostsFile=/dev/null
-user root
-
-Host q1bel19
-HostName q1bel19.belfast-sciencepark.uk.ibm.com
-StrictHostKeyChecking no
-UserKnownHostsFile=/dev/null
-user root
-
-Host q1bel21
-HostName q1bel21.belfast-sciencepark.uk.ibm.com
-StrictHostKeyChecking no
-UserKnownHostsFile=/dev/null
-user root
-Compression yes
-
-Host q1bel22
-HostName q1bel22.belfast-sciencepark.uk.ibm.com
-StrictHostKeyChecking no
-UserKnownHostsFile=/dev/null
-user root
-
-
-Host bfonfs01
-HostName bfonfs01.belfast-sciencepark.uk.ibm.com
-StrictHostKeyChecking no
-user anton
-Compression yes
-
-Host q1build04
-HostName q1build04.hursley.ibm.com
-user hudson
-Compression yes
-
-Host belfastnfs
-  User anton
-  HostName belfastnfs.belfast-sciencepark.uk.ibm.com
-Host 9.183.109.100
-  StrictHostKeyChecking ask
-  UserKnownHostsFile=~/.ssh/known_hosts
-  User anton
-# Belfast vms
-Host 9.183.109.*
-  StrictHostKeyChecking no
-  UserKnownHostsFile=/dev/null
-  User root
-
-# Hursley vms
-Host 9.180.225.*
-  StrictHostKeyChecking no
-  UserKnownHostsFile=/dev/null
-  User root
-Host 9.180.234.*
-  StrictHostKeyChecking no
-  UserKnownHostsFile=/dev/null
-  User root
+ 
+# Work
+Host work
+  HostName 192.168.11.193
+  User apiatek
 
 
 # SoMakeIt configs
-
 Host toad
 HostName toad.servers.somakeit.org.uk
 Port 6022
@@ -203,3 +84,4 @@ Compression yes
 Host *
 ServerAliveInterval 180
 Compression yes
+UseRoaming no

@@ -5,7 +5,7 @@ set nomousehide
 
 set showmatch                   
 "set how many spaces a tab char is
-set tabstop=8
+set tabstop=4
 
 "Tell vi not to replace spaces with tabs
 set expandtab
@@ -106,11 +106,12 @@ set wrap linebreak nolist textwidth=0 wrapmargin=0
 let g:vim_markdown_folding_disabled=1
 "
 
-" Set autofoldeing with allowed manual (http://vim.wikia.com/wiki/Folding)
+" Set autofolding with allowed manual (http://vim.wikia.com/wiki/Folding)
 augroup vimrc
   au BufReadPre * setlocal foldmethod=indent
   au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
 augroup END
+set foldlevelstart=20
 
 
 " Set F9 to open/collapse folds
@@ -125,3 +126,24 @@ au BufRead,BufNewFile *.md set filetype=markdown
 set nowb
 set noswapfile
 set noar
+
+" ctrlp
+" https://github.com/kien/ctrlp.vim
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+:helptags ~/.vim/bundle/ctrlp.vim/doc
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.o,*.P
+
+" vim -b : edit binary using xxd-format!
+augroup Binary
+  au!
+  au BufReadPre  *.pkt let &bin=1
+  au BufReadPost *.pkt if &bin | %!xxd
+  au BufReadPost *.pkt set ft=xxd | endif
+  au BufWritePre *.pkt if &bin | %!xxd -r
+  au BufWritePre *.pkt endif
+  au BufWritePost *.pkt if &bin | %!xxd
+  au BufWritePost *.pkt set nomod | endif
+augroup END

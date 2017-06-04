@@ -7,10 +7,6 @@ fi
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-#alias to get the dbus session
-shopt -s expand_aliases
-alias getdbus="export DBUS_SESSION_BUS_ADDRESS=`cat /proc/$(pidof kded4)/environ | tr '\0' '\n' | grep DBUS | cut -d '=' -f2-`"
-
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
@@ -19,6 +15,7 @@ export HISTCONTROL=ignoredups
 
 #Keep a large shell history
 export HISTFILESIZE=1000000
+export HISTSIZE=100000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -78,11 +75,13 @@ fi
 # enable color support of ls and also add handy aliases
 if [ "$TERM" != "dumb" ]; then
     #eval "`dircolors -b`"
-    eval $(dircolors ~/code/solarized-files/ls-colors-solarized)
+    eval $(dircolors ~/dotfiles/dircolors.ansi-dark)
     alias ls='ls --color=auto'
     alias dir='ls --color=auto --format=vertical'
     alias vdir='ls --color=auto --format=long'
 
+    # for some reason new ubuntu and byobu just give a no-color term - I always have colour...
+    export TERM=screen-256color
 fi
 
 # some more ls aliases
@@ -106,8 +105,8 @@ fi
 
 
 #fixes for synergy keycodes
-echo "keycode 52 = z Z less less less less" | xmodmap -
-echo "keycode 53 = x X greater greater greater greater" | xmodmap -
+#echo "keycode 52 = z Z less less less less" | xmodmap -
+#echo "keycode 53 = x X greater greater greater greater" | xmodmap -
 
 alias x11vnc="x11vnc -usepw"
 
@@ -117,17 +116,24 @@ alias rd='/usr/bin/xfreerdp --plugin cliprdr --plugin rdpsnd -g 1280x800 -u argo
 alias sl="sl -e"
 alias o="xdg-open"
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+export EDITOR=vim
+export VISUAL="gvim -f"
+
+export PATH=~/bin:$PATH
 
 # Only load Liquid Prompt in interactive shells, not from a script or from scp
 [[ $- = *i* ]] && source ~/liquidprompt/liquidprompt
 
 ## Other bash profile goodness
-if [[ -e .bashrc_thinkpad ]]; then
-  . .bashrc_thinkpad
+if [[ -e ~/.bashrc_local ]]; then
+  . ~/.bashrc_local
 fi
 
-if [ -f /var/run/reboot-required ]; then echo 'Restart required for unattended-upgrades'; fi
 
+highlight() { 
+  grep --color -E "$1|\$" 
+}
+alias hl=highlight
+
+if [ -f /var/run/reboot-required ]; then echo 'Restart required for unattended-upgrades'; fi
 
