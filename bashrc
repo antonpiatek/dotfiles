@@ -128,4 +128,6 @@ if [[ -e .bashrc_thinkpad ]]; then
   . .bashrc_thinkpad
 fi
 
+if [ -f /var/run/reboot-required ]; then echo 'Restart required for unattended-upgrades'; fi
+
 
