@@ -29,7 +29,7 @@ ForwardX11Trusted yes
 Compression yes
 
 Host tc
-HostName kalimdor.tastycake.net
+HostName ssh.tastycake.net
 ForwardAgent yes
 User anton
 Compression yes
