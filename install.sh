@@ -33,6 +33,7 @@ setLink "$PWD/gitconfig"             ~/.gitconfig
 setLink "$PWD/ctags"                 ~/.ctags
 setLink "$PWD/perltidyrc"            ~/.perltidyrc
 setLink "$PWD/dir_colors.solarized"  ~/.dir_colors.solarized
+setLink "$PWD/editorconfig"          ~/.editorconfig
 
 #vim plugins
 mkdir -p ~/.vim/bundle
@@ -43,6 +44,7 @@ gitClone https://github.com/plasticboy/vim-markdown.git        ~/.vim/bundle/vim
 gitClone https://github.com/will133/vim-dirdiff.git            ~/.vim/bundle/vim-dirdiff
 gitClone https://github.com/majutsushi/tagbar.git              ~/.vim/bundle/tagbar
 gitClone https://github.com/kien/ctrlp.vim.git                 ~/.vim/bundle/ctrlp.vim
+gitClone https://github.com/editorconfig/editorconfig-vim.git  ~/.vim/bundle/editorconfig-vim
 mkdir -p ~/.vim/plugin
 setLink "$PWD/dotfiles/vim_tagbar" ~/.vim/plugin/tagbar.vim
 mkdir -p ~/.vim/autoload
