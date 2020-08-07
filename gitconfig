@@ -8,6 +8,8 @@
 [alias]
 	d = difftool
 [alias]
+	s = status
+[alias]
 	co = checkout
 [merge]
 	tool = vimdiff
