@@ -20,14 +20,6 @@ ForwardX11Trusted yes
 ForwardAgent yes
 Compression yes
 
-Host lost
-User anton
-HostName lost.hursley.ibm.com
-ForwardAgent yes
-ForwardX11 yes
-ForwardX11Trusted yes
-Compression yes
-
 Host tc
 HostName ssh.tastycake.net
 ForwardAgent yes
@@ -40,41 +32,6 @@ ForwardAgent yes
 User anton
 ForwardX11 yes
 ForwardX11Trusted yes
-Compression yes
- 
-# Work
-Host work
-  HostName 192.168.11.193
-  User apiatek
-
-
-# SoMakeIt configs
-Host toad
-HostName toad.servers.somakeit.org.uk
-Port 6022
-User anton
-Compression yes
-
-Host toadlocal
-HostName 10.0.0.2
-User anton
-Compression yes
-
-Host yoshi
-HostName yoshi.somakeit.org.uk
-User anton
-Compression yes
-
-Host kong
-HostName kong
-User root
-ForwardAgent yes
-ProxyCommand ssh anton@toad -W %h:%p
-Compression yes
-
-Host konglocal
-HostName kong
-User root
 Compression yes
 
 
