@@ -80,6 +80,10 @@ if [ "$TERM" != "dumb" ]; then
     alias dir='ls --color=auto --format=vertical'
     alias vdir='ls --color=auto --format=long'
 
+    # for some reason new ubuntu and byobu just give a no-color term - I always have colour...
+    #export TERM=screen-256color
+    #On TC the above plays bad in vim, but xterm works
+    export TERM=xterm
 fi
 
 # some more ls aliases
@@ -127,7 +131,11 @@ if [[ -e ~/.bashrc_local ]]; then
   . ~/.bashrc_local
 fi
 
+
 highlight() { 
   grep --color -E "$1|\$" 
 }
+alias hl=highlight
+
+if [ -f /var/run/reboot-required ]; then echo 'Restart required for unattended-upgrades'; fi
 
