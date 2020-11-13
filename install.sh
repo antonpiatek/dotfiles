@@ -2,6 +2,8 @@
 
 # inspired by https://github.com/benjie/dotfiles
 
+git pull
+
 function setLink {
   src="$1"
   target="$2"
@@ -51,7 +53,7 @@ mkdir -p ~/.vim/autoload
 setLink "$PWD/vim_pathogen"        ~/.vim/autoload/pathogen.vim
 setLink "$PWD/vim_tagbar_autoload" ~/.vim/autoload/tagbar.vim
 mkdir -p ~/.vim/syntax
-setLink "$PWD/vim_tagbar_syntax"   ~/.vim/syntax/tagbar.vim 
+setLink "$PWD/vim_tagbar_syntax"   ~/.vim/syntax/tagbar.vim
 
 # liquidprompt - best bash/zsh PS1 I've seen!
 gitClone https://github.com/nojhan/liquidprompt.git ~/liquidprompt
