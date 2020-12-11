@@ -137,5 +137,7 @@ highlight() {
 }
 alias hl=highlight
 
+alias df="df -lh -x tmpfs -x squashfs"
+
 if [ -f /var/run/reboot-required ]; then echo 'Restart required for unattended-upgrades'; fi
 
