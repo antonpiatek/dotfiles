@@ -39,7 +39,7 @@ fi
 
 case "$TERM" in
 xterm|xterm-color)
-    #Don't think ive ever used the debian chroot stuff... 
+    #Don't think ive ever used the debian chroot stuff...
     #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;33m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
     #TODO: detect root?
@@ -132,12 +132,22 @@ if [[ -e ~/.bashrc_local ]]; then
 fi
 
 
-highlight() { 
-  grep --color -E "$1|\$" 
+highlight() {
+  grep --color -E "$1|\$"
 }
 alias hl=highlight
 
 alias df="df -lh -x tmpfs -x squashfs"
+
+
+# start ssh-agent
+if ! [ $(ps ax | grep [s]sh-agent | wc -l) -gt 0 ] ; then
+    eval $(ssh-agent -s) &> /dev/null
+	# can't decide if I want this or not?
+    if [ "$(ssh-add -l)" == "The agent has no identities." ] ; then
+        ssh-add ~/.ssh/id_rsa
+    fi
+fi
 
 if [ -f /var/run/reboot-required ]; then echo 'Restart required for unattended-upgrades'; fi
 
