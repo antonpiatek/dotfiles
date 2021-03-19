@@ -11,6 +11,7 @@ DEBS=$(cat <<END| tr '\n' ' '
     todotxt-cli
     mosh
     vim-tiny
+    unattended-upgrades
 END
 )
 
