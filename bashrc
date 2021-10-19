@@ -39,7 +39,7 @@ fi
 
 case "$TERM" in
 xterm|xterm-color)
-    #Don't think ive ever used the debian chroot stuff... 
+    #Don't think ive ever used the debian chroot stuff...
     #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;33m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
     #TODO: detect root?
@@ -132,10 +132,31 @@ if [[ -e ~/.bashrc_local ]]; then
 fi
 
 
-highlight() { 
-  grep --color -E "$1|\$" 
+highlight() {
+  grep --color -E "$1|\$"
 }
 alias hl=highlight
 
 if [ -f /var/run/reboot-required ]; then echo 'Restart required for unattended-upgrades'; fi
 
+source "$HOME/.cargo/env"
+alias t='todo-txt -d /home/anton/.todo/todo.cfg'
+
+# duf default to local
+duf () {
+    if [[ -z $1 ]] ; then
+        command duf -only local
+    else
+        command duf "$@"
+    fi
+}
+
+# df defult to local and no squashfs
+df () {
+    if [[ -z $1 ]] ; then
+        command df -lh -x squashfs -x tmpfs -x devtmpfs -x overlay
+
+    else
+        command df "$@"
+    fi
+}
