@@ -6,9 +6,10 @@
 [difftool]
     prompt = false
 [alias]
-	d = difftool
+    d = difftool
     s = status
     co = checkout
+    sw = switch
 [merge]
 	tool = meld
 [push]
