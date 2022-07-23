@@ -137,7 +137,23 @@ highlight() {
 }
 alias hl=highlight
 
-alias df="df -lh -x tmpfs -x squashfs"
+# duf default to local
+duf() {
+    if [[ -z "$1" ]] ; then
+        command duf -only local
+    else
+        command duf "$@"
+    fi
+}
+
+# df defult to local and no squashfs
+df() {
+    if [[ -z "$1" ]] ; then
+        command df -lh -x squashfs -x tmpfs -x devtmpfs -x overlay
+    else
+        command df "$@"
+    fi
+}
 
 
 # start ssh-agent
