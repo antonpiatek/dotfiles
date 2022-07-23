@@ -141,13 +141,13 @@ alias df="df -lh -x tmpfs -x squashfs"
 
 
 # start ssh-agent
-if ! [ $(ps ax | grep [s]sh-agent | wc -l) -gt 0 ] ; then
-    eval $(ssh-agent -s) &> /dev/null
-	# can't decide if I want this or not?
-    if [ "$(ssh-add -l)" == "The agent has no identities." ] ; then
-        ssh-add ~/.ssh/id_rsa
-    fi
-fi
+#if ! [ $(ps ax | grep [s]sh-agent | wc -l) -gt 0 ] ; then
+#    eval $(ssh-agent -s) &> /dev/null
+#	# can't decide if I want this or not?
+#    if [ "$(ssh-add -l)" == "The agent has no identities." ] ; then
+#        ssh-add ~/.ssh/id_rsa
+#    fi
+#fi
 
 if [ -f /var/run/reboot-required ]; then echo 'Restart required for unattended-upgrades'; fi
 
