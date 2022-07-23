@@ -12,6 +12,7 @@ DEBS=$(cat <<END| tr '\n' ' '
     mosh
     vim-tiny
     unattended-upgrades
+    uptimed
 END
 )
 
