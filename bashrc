@@ -155,6 +155,7 @@ df() {
     fi
 }
 
+if [ -f /var/run/reboot-required ]; then echo 'Restart required for unattended-upgrades'; fi
 
 # start ssh-agent
 #if ! [ $(ps ax | grep [s]sh-agent | wc -l) -gt 0 ] ; then
@@ -165,5 +166,12 @@ df() {
 #    fi
 #fi
 
-if [ -f /var/run/reboot-required ]; then echo 'Restart required for unattended-upgrades'; fi
 
+if [ -e /usr/bin/keychain ];then
+    if [ -e $HOME/.ssh/id_ed25519 ]; then
+        /usr/bin/keychain --nogui $HOME/.ssh/id_ed25519
+    elif [ -e  $HOME/.ssh/id_ecdsa ];then
+        /usr/bin/keychain --nogui $HOME/.ssh/id_ecdsa
+    fi
+    source $HOME/.keychain/$HOSTNAME-sh
+fi
