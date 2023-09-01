@@ -39,9 +39,9 @@ setLink "$PWD/editorconfig"          ~/.editorconfig
 
 #vim plugins
 mkdir -p ~/.vim/bundle
-gitClone git://github.com/altercation/vim-colors-solarized.git ~/.vim/bundle/vim-colors-solarized
+gitClone https://github.com/altercation/vim-colors-solarized.git ~/.vim/bundle/vim-colors-solarized
 gitClone https://github.com/kchmck/vim-coffee-script.git       ~/.vim/bundle/vim-coffee-script
-gitClone git://github.com/digitaltoad/vim-jade.git             ~/.vim/bundle/vim-jade
+gitClone https://github.com/digitaltoad/vim-jade.git           ~/.vim/bundle/vim-jade
 gitClone https://github.com/plasticboy/vim-markdown.git        ~/.vim/bundle/vim-markdown
 gitClone https://github.com/will133/vim-dirdiff.git            ~/.vim/bundle/vim-dirdiff
 gitClone https://github.com/majutsushi/tagbar.git              ~/.vim/bundle/tagbar
@@ -57,5 +57,6 @@ setLink "$PWD/vim_tagbar_syntax"   ~/.vim/syntax/tagbar.vim
 
 # liquidprompt - best bash/zsh PS1 I've seen!
 gitClone https://github.com/nojhan/liquidprompt.git ~/liquidprompt
+
 
 echo all done
