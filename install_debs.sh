@@ -21,7 +21,7 @@ do
     if ! dpkg -s "$i" > /dev/null 2>&1
     then
         echo "$i not installed, installing via apt"
-        sudo apt install $i
+        sudo apt install -y $i
     else
         echo "$i installed already"
     fi
